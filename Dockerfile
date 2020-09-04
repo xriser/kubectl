@@ -14,7 +14,7 @@ RUN wget -q https://storage.googleapis.com/kubernetes-release/release/${KUBE_LAT
     && wget -q https://github.com/mikefarah/yq/releases/download/${YQ_VERSION}/yq_linux_amd64 -O /usr/local/bin/yq \
     && chmod +x /usr/local/bin/yq
 
-RUN curl https://raw.githubusercontent.com/helm/helm/master/scripts/get-helm-3 | bash &&
+RUN curl https://raw.githubusercontent.com/helm/helm/master/scripts/get-helm-3 | bash \
     && rm -rf /var/cache/apk/* /var/tmp/* /tmp/*
 
 WORKDIR /config
